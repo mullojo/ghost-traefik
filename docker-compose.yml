@@ -27,12 +27,12 @@ services:
   ghost:
     image: ${GHOST_IMAGE_TAG}
     volumes:
-      - ghost-data:${DATA_PATH}
+      - ghost-data: ${DATA_PATH}
     environment:
       NODE_ENV: production
       url: ${GHOST_URL}
       database__client: sqlite3
-      database__connection__filename: ${DATA_PATH}/data/ghost.db
+      database__connection__filename: ${DB_DATA_PATH}
       database__useNullAsDefault: true
       database__debug: false
     networks:
