@@ -27,7 +27,7 @@ services:
   ghost:
     image: ${GHOST_IMAGE_TAG}
     volumes:
-      - ghost-data: ${DATA_PATH}
+      - ghost-data:${DATA_PATH}
     environment:
       NODE_ENV: production
       url: ${GHOST_URL}
