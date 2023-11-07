@@ -8,6 +8,7 @@
 # Create networks for your services before deploying the configuration using the commands:
 # `docker network create traefik-network`
 # `docker network create ghost-network`
+# `git clone https://github.com/mullojo/ghost-traefik.git`
 
 # Deploy Ghost using Docker Compose:
 # `docker compose -f docker-compose.yml -p ghost up -d`
@@ -26,7 +27,7 @@ services:
   ghost:
     image: ${GHOST_IMAGE_TAG}
     volumes:
-      - ghost-data: ${DATA_PATH}
+      - ghost-data:${DATA_PATH}
     environment:
       NODE_ENV: production
       url: ${GHOST_URL}
